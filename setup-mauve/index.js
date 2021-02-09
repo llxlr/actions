@@ -63,16 +63,6 @@ async function run() {
         core.info(`Use ${name} ...`);
 
         if (name == 'mauveAligner' || name == 'progressiveMauve') {
-            console.log(tempDirectory);
-
-            core.info('Download Mauve...');
-            await download(fileURL, tempDirectory);
-            core.info('End...');
-
-            core.info('Unzip Mauve...');
-            await unzip(path.join(tempDirectory, 'mauve_linux_snapshot_2015-02-13.tar.gz'), '/usr/local/mauve');
-            core.info('End...')
-
             core.addPath("/usr/local/mauve/linux-x64");
             await exec.exec(`${name} ${args}`);
         } else {
@@ -85,4 +75,10 @@ async function run() {
     }
 }
 
+core.info('Download Mauve...');
+download(fileURL, tempDirectory);
+core.info('End...');
+core.info('Unzip Mauve...');
+unzip(path.join(tempDirectory, 'mauve_linux_snapshot_2015-02-13.tar.gz'), '/usr/local/mauve');
+core.info('End...')
 run();
