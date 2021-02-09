@@ -1,0 +1,35 @@
+name: 'Send message'
+description: 'Send some message from other actions'
+author: 'James Yang'
+inputs:
+  server:
+    description: 'Server name.'
+    default: 'email'
+  smtp:
+    description: 'Email SMTP server domain.'
+    default: 'smtp.qq.com'
+  smtp-auth:
+    description: 'SMTP identity authentication.'
+    default: true
+  port:
+    description: ''
+    default: 465
+  ssl:
+    description: ''
+    default: true
+  email:
+    description: 'Email name.'
+  password:
+    description: 'Email password.'
+  serverchan-key:
+    description: 'ServerChan Turbo key.'
+  title:
+    description: 'Message title.'
+  message:
+    description: 'Send message.'
+outputs:
+  send-time:
+    description: 'Send message time.'
+runs:
+  using: 'node12'
+  main: 'lib/index.js'
