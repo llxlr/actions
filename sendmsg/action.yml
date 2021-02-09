@@ -9,17 +9,16 @@ inputs:
   smtp:
     description: 'Email SMTP server domain.'
     default: 'smtp.qq.com'
-  smtp-auth:
-    description: 'SMTP identity authentication.'
-    default: true
   port:
-    description: ''
-    default: '465'
+    description: 'smtp server port.'
+    default: 465
   ssl:
     description: ''
     default: 'true'
   email:
     description: 'Email name.'
+  to:
+    description: 'Send email name.'
   password:
     description: 'Email password.'
   serverchan-key:

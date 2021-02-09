@@ -1,0 +1,35 @@
+{
+  "name": "sendmsg",
+  "version": "0.0.1",
+  "description": "Send message use actions",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write **/*.js",
+    "format-check": "prettier --check **/*.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llxlr/actions.git",
+    "directory": "sendmsg"
+  },
+  "keywords": [
+    "actions",
+    "auto",
+    "message"
+  ],
+  "author": "james yang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/llxlr/actions/issues"
+  },
+  "homepage": "https://github.com/llxlr/actions/sendmsg/#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/exec": "^1.0.4",
+    "emailjs": "^3.4.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "request": "^2.88.2"
+  }
+}
