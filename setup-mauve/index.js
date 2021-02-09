@@ -79,7 +79,7 @@ async function run() {
         const args = core.getInput('args');
         core.info(`Use ${name} ...`);
 
-        if (name in ['mauveAligner', 'progressiveMauve']) {
+        if (name == 'mauveAligner' || name == 'progressiveMauve') {
             console.log(tempDirectory);
 
             core.info('Download Mauve...');
