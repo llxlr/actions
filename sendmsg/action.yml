@@ -1,10 +1,11 @@
 name: 'Send message'
-description: 'Send some message from other actions'
+description: 'Send message use actions'
 author: 'James Yang'
 inputs:
   server:
     description: 'Server name.'
     default: 'email'
+    required: true
   smtp:
     description: 'Email SMTP server domain.'
     default: 'smtp.qq.com'
@@ -13,10 +14,10 @@ inputs:
     default: true
   port:
     description: ''
-    default: 465
+    default: '465'
   ssl:
     description: ''
-    default: true
+    default: 'true'
   email:
     description: 'Email name.'
   password:
@@ -25,8 +26,10 @@ inputs:
     description: 'ServerChan Turbo key.'
   title:
     description: 'Message title.'
+    required: true
   message:
     description: 'Send message.'
+    required: true
 outputs:
   send-time:
     description: 'Send message time.'
