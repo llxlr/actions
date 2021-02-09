@@ -14,15 +14,6 @@ function download(url, pathname) {
     let file = path.join(pathname, path.basename(url));//下载保存的文件路径
     let tmp = file + ".tmp";//缓存文件路径
 
-    //创建文件夹
-    fs.access(pathname, (err) => {
-        if (err) {
-            fs.mkdir(path, (err) => {
-                if(err) throw err; // 如果出现错误就抛出错误信息
-            })
-        }
-    })
-
     //创建写入流
     const fileStream = fs.createWriteStream(tmp).on('error', function (e) {
         console.error('error==>', e)
@@ -57,14 +48,6 @@ function download(url, pathname) {
 }
 
 function unzip(file, pathname) {
-    fs.access(pathname, (err) => {
-        if (err) {
-            fs.mkdir(path, (err) => {
-                if(err) throw err; // 如果出现错误就抛出错误信息
-            })
-        }
-    })
-
     fs.createReadStream(file).pipe(
         tar.x({
             strip: 1,
