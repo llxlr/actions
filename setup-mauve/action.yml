@@ -1,0 +1,17 @@
+name: 'Send message'
+description: 'Send message use actions'
+author: 'James Yang'
+inputs:
+  name:
+    description: 'mauveAligner/progressiveMauve'
+    default: 'progressiveMauve'
+    required: true
+  args:
+    description: 'arguments list.'
+    required: true
+outputs:
+  time:
+    description: 'Setup time.'
+runs:
+  using: 'node12'
+  main: 'lib/index.js'
