@@ -1,0 +1,16 @@
+name: sendmsg
+
+on: [push]
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: llxlr/actions/sendmsg@master
+        with:
+          server: 'serverchan'
+          key: '{{ secrets.SERVERCHAN_KEY }}'
+          title: '测试标题'
+          message: '测试消息'
