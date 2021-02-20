@@ -1,0 +1,20 @@
+name: setup-mauve
+
+on: [push]
+
+jobs:
+  set-mauve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      #- uses: llxlr/actions/setup-mauve@master
+        #with:
+          #name: 'progressiveMauve'
+          #args: >-
+            #--version
+
+      - name: test
+        run: >-
+          --version
+        shell: ./progressiveMauve {0}
