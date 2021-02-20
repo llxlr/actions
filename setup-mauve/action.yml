@@ -13,5 +13,5 @@ outputs:
   time:
     description: 'Setup time.'
 runs:
-  using: 'node12'
-  main: 'index.js'
+  using: 'docker'
+  image: 'Dockerfile'
