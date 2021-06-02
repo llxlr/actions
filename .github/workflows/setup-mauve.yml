@@ -6,6 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: docker://llxlr/setup-mauve:progressiveMauve
-      - run: progressiveMauve --version
+        with:
+          args: --version
       - uses: docker://llxlr/setup-mauve:mauveAligner
-      - run: mauveAligner --version
+        with:
+          args: --version
