@@ -1,0 +1,34 @@
+name: Setup Anvi'o v7(hope)
+
+on: []
+
+jobs:
+  anvio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache conda
+        uses: actions/cache@v2
+        env:
+          CACHE_NUMBER: 0
+        with:
+          path: ~/conda_pkgs_dir
+          key:
+            ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('setup-anvio/environment.yml') }}
+
+      - name: Setup conda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          activate-environment: anvio7
+          environment-file: setup-anvio/environment.yml
+          python-version: 3.6
+          condarc-file: setup-anvio/condarc.yml
+          channel-priority: strict
+          auto-activate-base: false
+          use-only-tar-bz2: true
+
+      - run: |
+        conda info
+        conda list
+
