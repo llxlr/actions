@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: docker://llxlr/setup-mauve:progressiveMauve
+      - uses: docker://llxlr/setup-mauve:progressiveMauve-busybox
         with:
           args: --version
-      - uses: docker://llxlr/setup-mauve:mauveAligner
+      - uses: docker://llxlr/setup-mauve:mauveAligner-busybox
         with:
           args: --version
